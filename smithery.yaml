@@ -1,0 +1,22 @@
+# Smithery deployment manifest — https://smithery.ai
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      invovateApiKey:
+        type: string
+        title: Invovate API Key
+        description: >-
+          Free API key from https://invovate.com/auth (starts with inv_). Enables
+          PDF/UBL output and 7-day hosted links. Optional — calculate_invoice_totals
+          works without it.
+    required: []
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['src/index.js'],
+      env: { INVOVATE_API_KEY: config.invovateApiKey || '' }
+    })
+  exampleConfig:
+    invovateApiKey: inv_xxxxxxxxxxxxxxxxxxxxxxxx

@@ -1,6 +1,7 @@
 {
   "name": "invovate-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.LightSpeedPlusOne/invovate-mcp-server",
   "description": "MCP server for the Invovate invoice API \u2014 let AI agents generate PDF, JSON, and UBL 2.1 invoices in 11 languages.",
   "type": "module",
   "bin": {

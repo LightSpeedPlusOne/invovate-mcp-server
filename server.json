@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.LightSpeedPlusOne/invovate-mcp-server",
+  "description": "AI-agent invoice generator: PDF, JSON & UBL in 11 languages via the Invovate API.",
+  "version": "0.1.1",
+  "repository": {
+    "url": "https://github.com/LightSpeedPlusOne/invovate-mcp-server",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "invovate-mcp-server",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "INVOVATE_API_KEY",
+          "description": "Free Invovate API key (starts with inv_) from https://invovate.com/auth. Required only for the PDF/UBL tools; calculate_invoice_totals works without it.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "INVOVATE_API_BASE",
+          "description": "Override the API base URL (defaults to https://invovate.com).",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

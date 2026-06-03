@@ -1,5 +1,13 @@
 # Invovate MCP Server
 
+[![npm](https://img.shields.io/npm/v/invovate-mcp-server)](https://www.npmjs.com/package/invovate-mcp-server)
+[![MCP Registry](https://img.shields.io/badge/MCP%20Registry-invovate-2563eb)](https://registry.modelcontextprotocol.io)
+[![Glama](https://img.shields.io/badge/Glama-MCP%20server-7c3aed)](https://glama.ai/mcp/servers/LightSpeedPlusOne/invovate-mcp-server)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-085f73)](https://invovate.com/openapi.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**Invovate MCP Server is a free, no-signup invoice MCP server for Claude, Cursor, and other MCP clients — it generates invoices as PDF, JSON, and UBL 2.1 via the [Invovate invoice API](https://invovate.com/api).**
+
 Let AI agents generate **PDF, JSON, and UBL 2.1 invoices in 11 languages**
 (including right-to-left Arabic, Japanese, Hindi, and Cyrillic) through the
 [Invovate invoice API](https://invovate.com/api). Works with Claude Desktop,
@@ -52,7 +60,8 @@ Windsurf MCP settings).
 ### Run from source (before npm publish)
 
 ```bash
-git clone <this repo> && cd mcp-server && npm install
+git clone https://github.com/LightSpeedPlusOne/invovate-mcp-server.git
+cd invovate-mcp-server && npm install
 INVOVATE_API_KEY=inv_your_key node src/index.js
 ```
 
@@ -90,6 +99,28 @@ INVOVATE_API_KEY=inv_xxx npm test          # also exercises the PDF hosted-link 
   No Peppol / Factur-X / ZUGFeRD / XRechnung / NF-e compliance or network delivery.
 - Hosted links expire and the invoice is deleted after 7 days.
 - Docs for agents: https://invovate.com/invoice-api-for-ai-agents · OpenAPI: https://invovate.com/openapi.json
+
+## Example prompts
+
+Once connected, ask your AI client in natural language:
+
+```text
+Create an invoice for Acme Ltd for 3 hours of consulting at $120/hour. Return it as a PDF.
+Generate a UBL 2.1 invoice for a SaaS subscription charged €49/month.
+Make a Japanese invoice (¥) for ¥350,000 of web design with 10% consumption tax, and give me the link.
+```
+
+## Links
+
+- **Invoice API & docs:** https://invovate.com/api · https://invovate.com/invoice-api-for-ai-agents
+- **OpenAPI 3.1 spec:** https://invovate.com/openapi.json (import as a ChatGPT / Claude Action)
+- **MCP landing page:** https://invovate.com/mcp-invoice-generator · **All integrations:** https://invovate.com/integrations
+- **npm (this package):** https://www.npmjs.com/package/invovate-mcp-server
+- **Python SDK:** https://pypi.org/project/invovate/ · **JavaScript SDK:** https://www.npmjs.com/package/invovate
+- **Glama MCP directory:** https://glama.ai/mcp/servers/LightSpeedPlusOne/invovate-mcp-server
+- **Postman collection:** https://www.postman.com/lightspeedplusone-9440989/workspace/invovate-invoice-api/overview
+- **RapidAPI:** https://rapidapi.com/LightSpeedPlusOne/api/invovate-invoice
+- **WordPress plugin:** https://wordpress.org/plugins/invovate-invoice-generator/
 
 ## License
 

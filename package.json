@@ -1,8 +1,8 @@
 {
   "name": "invovate-mcp-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "mcpName": "io.github.LightSpeedPlusOne/invovate-mcp-server",
-  "description": "MCP server for the Invovate invoice API \u2014 let AI agents generate PDF, JSON, and UBL 2.1 invoices in 11 languages.",
+  "description": "Free no-signup invoice MCP server for Claude & Cursor \u2014 generate PDF, JSON, and UBL 2.1 invoices in 11 languages via the Invovate invoice API.",
   "type": "module",
   "bin": {
     "invovate-mcp": "src/index.js"
@@ -18,14 +18,21 @@
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "model-context-protocol",
     "invoice",
     "invoice-api",
-    "pdf",
-    "ubl",
     "invoice-generator",
+    "pdf-invoice",
+    "json-to-pdf",
+    "ubl",
+    "ubl-2.1",
+    "e-invoicing",
+    "no-signup",
+    "openapi",
     "ai-agents",
     "claude",
+    "cursor",
     "chatgpt"
   ],
   "homepage": "https://invovate.com/invoice-api-for-ai-agents",

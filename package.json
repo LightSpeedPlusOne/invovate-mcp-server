@@ -1,8 +1,8 @@
 {
   "name": "invovate-mcp-server",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "mcpName": "io.github.LightSpeedPlusOne/invovate-mcp-server",
-  "description": "Free no-signup invoice MCP server for Claude & Cursor \u2014 generate PDF, JSON, and UBL 2.1 invoices in 11 languages via the Invovate invoice API.",
+  "description": "Free no-signup invoice MCP server for Claude & Cursor — generate PDF, JSON, and UBL 2.1 invoices in 11 languages via the Invovate invoice API.",
   "type": "module",
   "bin": {
     "invovate-mcp": "src/index.js"

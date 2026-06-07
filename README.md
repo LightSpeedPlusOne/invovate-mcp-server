@@ -20,14 +20,14 @@ JSON math works with **no API key**; PDF/UBL output uses a free key.
 | Tool | What it does | Key needed |
 |------|--------------|------------|
 | `calculate_invoice_totals` | Compute subtotal, discounts, tax, shipping, deposit, grand total, balance due — no file rendered. | No |
-| `generate_invoice_pdf` | Generate a PDF. Returns a 7-day hosted link (great for chat), or writes the file when `save_path` is given. | Recommended |
+| `generate_invoice_pdf` | Generate a PDF. Returns a 7-day hosted link (great for chat), or writes the file when `save_path` is given. | Required |
 | `generate_invoice_ubl` | Generate UBL 2.1 XML (interoperability/archival only — *not* regulated e-invoicing). | Yes |
 | `get_invoice_capabilities` | List supported languages, templates, currencies, and features. | No |
 
 ## Get a free API key
 
 Sign up at **https://invovate.com/auth** — your key starts with `inv_`. Free tier,
-no credit card. (You can use the server without a key for `calculate_invoice_totals`.)
+no credit card. (`calculate_invoice_totals` works without a key; PDF, UBL, QR, and hosted links require a free key.)
 
 ## Install
 

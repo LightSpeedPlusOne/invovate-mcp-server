@@ -9,7 +9,7 @@
  *
  * Tools:
  *   - calculate_invoice_totals  (no key needed)
- *   - generate_invoice_pdf      (returns a 7-day hosted link, or saves to a file)
+ *   - generate_invoice_pdf      (returns a 7-day hosted link, or saves to a file; key required)
  *   - generate_invoice_ubl      (returns UBL 2.1 XML; key required)
  *   - get_invoice_capabilities  (languages / currencies / templates)
  */
@@ -126,7 +126,7 @@ server.tool(
 
 server.tool(
   'generate_invoice_pdf',
-  'Generate a PDF invoice. By default returns a shareable 7-day hosted link that renders the PDF (best for chat — give the link to the user). If save_path is provided, the binary PDF is written to that local file instead. Set INVOVATE_API_KEY (free) for reliable PDF output.',
+  'Generate a PDF invoice. By default returns a shareable 7-day hosted link that renders the PDF (best for chat — give the link to the user). If save_path is provided, the binary PDF is written to that local file instead. Set INVOVATE_API_KEY (free) for reliable PDF output. Requires a free INVOVATE_API_KEY — PDF and hosted links need authentication (anonymous calls get JSON totals only).',
   { ...invoiceShape, save_path: z.string().optional().describe('Optional absolute path to write the .pdf file to. If omitted, a 7-day hosted link is returned.') },
   async (args) => {
     try {
@@ -174,7 +174,7 @@ server.tool(
     features: ['per-line & global discounts', 'single or multi-component tax', 'tax-inclusive pricing',
                'shipping, deposit, partial payment', 'logo & signature', 'structured payment block (IBAN/SWIFT)',
                'QR + 7-day hosted link', 'idempotent retries', 'webhooks'],
-    auth: 'Free API key (inv_…) via INVOVATE_API_KEY. JSON math works without a key.',
+    auth: 'Free API key (inv_…) via INVOVATE_API_KEY. JSON math works without a key; PDF, UBL, QR, and hosted links require a free key.',
     not_supported: 'Regulated e-invoice transmission (Peppol/Factur-X/ZUGFeRD/XRechnung/NF-e). UBL is for interoperability/archival only.',
     docs: 'https://invovate.com/invoice-api-for-ai-agents',
   }, null, 2))
